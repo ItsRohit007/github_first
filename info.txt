@@ -1,0 +1,25 @@
+RS Editor
+│
+│   index.html
+│
+├───css
+│       editor.css      
+│       index.css       
+│       index_stars.css 
+│       login_signup.css
+│       about_us.css
+│       contact_us.css
+│       community_feed.css
+│       features.css
+│       minimal_editor.css
+│       profile.css
+│
+├───pages
+│       about_us.html       (done)
+│       community_feed.html (done)
+│       contact_us.html     (done)
+│       editor.html         ()
+│       login_signup.html   (done)
+│       minimal_editor.html (done)
+│       profile.html        ()
+
