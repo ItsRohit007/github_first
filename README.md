@@ -6,11 +6,11 @@ Name of my website : RS Editor
 
 # Technologies we Used 
 ## - Front-end
-## - HTML 
-## - CSS
+##   - HTML 
+##   - CSS
 ## - Back-end
-## - JS 
-## - PHP
+##   - JS 
+##   - PHP
 ## - JUDGE0 API
 
 This is my college project, I want to add some more features although my project has done but, I want to go further and develop this website on my own. 
