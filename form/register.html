@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 3px;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .link a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="../css/index.css">
+<body>
+    <header class="header">
+        <h1 class="site-title">RS Editor</h1>
+        <nav class="navbar">
+            <a class="nav-items" href="./pages/editor.html"><span class="nav-item-text">IDE</span></a>
+            <a class="nav-items" href="./pages/minimal_editor.html"><span class="nav-item-text">Minimal IDE</span></a>
+            <a class="nav-items" href="./pages/community_feed.html"><span class="nav-item-text">Community Feed
+                </span></a>
+            <a class="nav-items" href="./pages/about_us.html"><span class="nav-item-text">About</span></a>
+            <a class="nav-items"
+                href="mailto:contactsanskarcs@gmail.com?subject=subject&cc=contactsanskarcs@gmail.com"><span
+                    class="nav-item-text">Contact</span></a>
+            <!-- <a class="nav-items" href="/pages/"><span class="nav-item-text"></span></a> -->
+        </nav>
+        <button class="sign-up"><a href="./form/login.html">Sign Up</a></button>
+        <button class="log-in"><a href="./form/register.html">Log In</a></button>
+        <div class="profile-image-container"><a href="../pages/profile.html"><img class="profile-image"
+                    src="assets/images/sanskar.png"></a></div>
+    </header>
+
+    <h2>Register</h2>
+    <form method="post" action="register.php">
+
+        <label for="first_name">first name</label>
+        <input type="text" id="first_name" name="first_name" required><br><br>
+        
+        <label for="last_name">last name</label>
+        <input type="text" id="last_name" name="last_name" required><br><br>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="email">Email : </label>
+        <input type="text" id="email" name="email" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+      
+        
+        <input type="submit" value="Register">
+
+        <div class="link">
+            <a href="login.html">Login</a>
+        </div>
+    </form>
+</body>
+</html>
