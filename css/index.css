@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Lucida Sans';
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* header -------------------- */
+.header {
+    background-color: black;
+    color: white;
+    top: 0;
+    margin-top: -22px;
+    height: 80px;
+    padding-top: 15px;
+}
+
+.site-title {
+    width: 150px;
+    margin-left: 20px;
+
+}
+
+.navbar {
+    border: black;
+    border-width: 12px;
+    width: 600px;
+    float: right;
+    margin-top: -50px;
+    margin-right: 600px;
+}
+
+.sign-up {
+    float: left;
+    margin-top: -50px;
+    margin-left: 1200px;
+    width: 70px;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.log-in {
+    float: left;
+    margin-top: -50px;
+    margin-left: 1300px;
+    width: 70px;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.nav-items {
+    background-color: white;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    opacity: 1;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.nav-item-text {
+    opacity: 1.0;
+    color: black;
+}
+
+
+/* Main -------------------- */
+.main {
+    background-color: white;
+    height: 1500px;
+    background-color: red;
+
+}
+
+#login-btn {
+    margin-left: -10px;
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+/* Button-------------------- */
+
+.btn-style {
+    padding: 10px 30px;
+    margin-left: 90px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: #fcfdff;
+    /* color: rgb(232, 240, 232); */
+}
+
+.btn-style:hover {
+    background: rgb(189, 190, 193);
+    color: #000000;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(30, 70, 104),
+        0 0 25px rgb(29, 41, 87),
+        0 0 50px rgb(54, 60, 80),
+        0 0 100px rgb(22, 35, 78);
+}
+
+
+.greeting {
+    background-image: radial-gradient(circle, rgb(21, 31, 68), rgb(0, 12, 25));
+    height: 100vh;
+}
+
+.sign-up {
+    right: -50px;
+    position: relative;
+}
+.log-in {
+    right: -50px;
+    position: relative;
+}
+
+.feature {
+    width: 100%;
+    height: 300px;
+    background-color: rgb(21, 31, 68);
+    color: white;
+}
+.feature p {
+    padding: 20px;
+    font-size: 25px;
+}
+
+.feature:nth-child(even) {
+    background-color: rgb(29, 45, 104);
+}
+
+
+
+/* Footer -------------------- */
+
+.column {
+    min-width: 300px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.column a {
+    color: white;
+}
+
+#footer {
+    background-color: #2f2f2f;
+    padding: 50px;
+    height: 150px;
+    position: relative;
+    margin-top: 450px;
+}
+
+#footer h4 {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#footer p {
+    color: white;
+}
+
+/* For even .feature elements */
+.feature:nth-child(even) {
+    display: flex;
+}
+
+/* For odd .feature elements */
+.feature:nth-child(odd) {
+    display: flex;
+}
+
+.profile-image-container {
+    float: right;
+    margin-top: -60px;
+    margin-right: 20px;
+}
+
+.profile-image-container img {
+    border-radius: 23042003px;
+    height: auto;
+    width: 50px;
+}
+
+.feature img {
+    padding: 10px;
+    z-index: 1;
+    border-radius: 20px;
+}

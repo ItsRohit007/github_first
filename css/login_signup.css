@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    background-image: radial-gradient(circle, rgb(21, 31, 68), rgb(0, 12, 25));
+    height: 100vh;
+    color: #fff;
+    font-family: 'Lucida Sans';
+}
+
+.center-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(114, 145, 255, 0.6);
+    border-radius: 10px;
+
+}
+
+.text-field {
+    padding: 10px 30px;
+    margin: 20px 0;
+    border: 2px solid rgb(52, 44, 44);
+    border-radius: 10px;
+    font-size: 12pt;
+    color: rgb(39, 42, 39);
+}
+
+.btn-style {
+    padding: 10px 30px;
+    margin-left: 90px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: #fcfdff;
+    /* color: rgb(232, 240, 232); */
+}
+
+.btn-style:hover {
+    background: rgb(21, 31, 68);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(73, 105, 221),
+        0 0 25px rgb(75, 110, 238),
+        0 0 50px rgb(72, 107, 231),
+        0 0 100px rgb(85, 116, 231);
+}
+
+.an-btn {
+    margin-top: 30px;
+    border: 0;
+    background-color: #141616;
+    color: rgb(118, 122, 211);
+    font-size: 11pt;
+}
+
+#register-div {
+    display: none;
+}
+
+#result-box {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16pt;
+    color: white;
+}
+
+#login-btn {
+    margin-left: 100px;
+}
