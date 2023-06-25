@@ -1,0 +1,53 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION["username"])) {
+    // User is not logged in, redirect to the login page
+    header("Location: login.html");
+    exit();
+}
+
+// Retrieve the username and email from the session
+$username = $_SESSION["username"];
+$email = $_SESSION["email"];
+
+// Handle logout
+if (isset($_POST["logout"])) {
+    // Unset all session variables
+    session_unset();
+
+    // Destroy the session
+    session_destroy();
+
+    // Redirect to the index page
+    header("Location: login.html");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.25">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/index_stars.css">
+</head>
+<body>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <h1>User Profile</h1>
+    <div class="profile">
+        <img src="../assets/images/profile.png" alt="Profile Picture">
+        <p class="user-info"><span>Username : </span> <?php echo $_SESSION["username"]; ?></p>
+        <p class="user-info"><span>Email : </span> <?php echo $email; ?> </p>
+        <form action="" method="POST">
+            <input type="submit" name="logout" value="Logout">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Code Editor</title>
+	<link rel="stylesheet" href="../css/editor.css">
+	<!-- import font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<div class="editor">
+		
+		<div class="editor-header">
+			<input class="filename-input" type="text" placeholder="code.txt">
+			<button class="run-button">RUN</button>
+			<button class="save-button">SAVE</button>
+		</div>
+
+		<div class="editor-content">
+			<div class="line-numbers"></div>
+			<textarea id="editor-textarea"></textarea>
+		</div>
+		
+	</div>
+	<script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</body>
+</html>

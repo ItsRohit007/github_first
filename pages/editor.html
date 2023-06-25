@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RS IDE</title>
+</head>
+
+<body>
+  <h1>RS IDE</h1>
+  
+  <div class="control-panel">
+    Select Language:
+    &nbsp; &nbsp;
+    <select id="languages" class="languages" onchange="changeLanguage()">
+      <option value="python"> Python </option>
+      <option value="c"> C </option>
+      <option value="cpp"> C++ </option>
+      <option value="java"> Java </option>
+    </select>
+  </div>
+  
+  <label for="code">Enter your code:</label><br>
+  <textarea id="code" rows="10" cols="50"></textarea><br>
+  
+  <button onclick="submitCode()">Submit</button><br>
+  
+  <h2>Output:</h2>
+  <pre id="output"></pre>
+  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    const API_KEY = '82b7d3f3b3msh610107bf55d509fp136bdejsnad5fae0468c7';
+
+    function changeLanguage() {
+      // Remaining code...
+
+      codeLanguageId = languageId;
+    }
+    
+    function submitCode() {
+      // Remaining code...
+
+      axios.post('https://judge0-ce.p.rapidapi.com/submissions', data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'x-rapidapi-host': 'judge0-ce.p.rapidapi.com',
+          'x-rapidapi-key': API_KEY,
+        },
+      })
+        .then(response => {
+          // Remaining code...
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+    
+    function getSubmissionResult(submissionId) {
+      // Remaining code...
+
+      axios.get(`https://judge0-ce.p.rapidapi.com/submissions/${submissionId}`, {
+        headers: {
+          'x-rapidapi-host': 'judge0-ce.p.rapidapi.com',
+          'x-rapidapi-key': API_KEY,
+        },
+      })
+        .then(response => {
+          // Remaining code...
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  </script>
+</body>
+</html>

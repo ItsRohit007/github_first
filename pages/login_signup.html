@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>RS Authentication</title>
+    <link rel="stylesheet" href="/css/login_signup.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/index_stars.css">
+    <script type="module" src="/js/login_signup.js"></script>
+</head>
+
+<body>
+
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <header class="header">
+        <h1 class="site-title">RS Editor</h1>
+        <nav class="navbar">
+            <a class="nav-items" href="/pages/editor.html"><span class="nav-item-text">IDEs</span></a>
+            <a class="nav-items" href="/pages/minimal_editor.html"><span class="nav-item-text">Minimal IDE</span></a>
+            <a class="nav-items"><span class="nav-item-text" href="/pages/contact_us.html">Community Feed </span></a>
+            <a class="nav-items"><span class="nav-item-text" href="/pages/about_us.html">About</span></a>
+            <a class="nav-items"><span class="nav-item-text" href="mailto:contactsanskarcs@gmail.com?subject=subject&cc=contactsanskarcs@gmail.com">Contact</span></a>
+        </nav>
+        <button class="sign-up"><a href="/pages/login_signup.html">Sign Up</a></button>
+        <button class="log-in"><a href="/pages/login_signup.html">Log In</a></button>
+    </header>
+
+
+    <div class="center-box" id="login-div">
+        <h2>Login</h2>
+        <input type="email" id="login-email" class="text-field" name="login-email" placeholder="Email" required /><br>
+        <input type="password" id="login-password" class="text-field" name="login-password" placeholder="Password"
+            required /><br>
+        <button id="login-btn" class="btn-style">Login</button><br>
+        <button id="reg-btn" class="an-btn">don't have an account? REGISTER</button>
+    </div>
+
+    <div class="center-box" id="register-div">
+        <h2>Register</h2>
+        <input type="email" id="register-email" class="text-field" name="register-email" placeholder="Email"
+            required /><br>
+        <input type="password" id="register-password" class="text-field" name="register-password" placeholder="Password"
+            required /><br>
+        <button id="register-btn" class="btn-style">Register</button><br>
+        <button id="log-btn" class="an-btn">have an account? LOGIN</button>
+    </div>
+
+    <div id="result-box">
+        <h3 id="result"></h3><br>
+        <button id="log-out-btn" class="btn-style">LOGIN OUT</button>
+    </div>
+
+</body>
+
+</html>

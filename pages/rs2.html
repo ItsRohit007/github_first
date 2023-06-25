@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RS Editor</title>
+
+  <style>
+    body {
+        background-color: #333;
+        color: #eee;
+        font-family: Arial, sans-serif;
+      }
+      
+      h1 {
+        color: #fff;
+      }
+      
+      .control-panel {
+        margin-bottom: 10px;
+      }
+      
+      .languages {
+        background-color: #555;
+        color: #eee;
+        border: none;
+        padding: 5px;
+        border-radius: 3px;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      textarea {
+        width: 100%;
+        padding: 10px;
+        background-color: #222;
+        color: #eee;
+        border: none;
+        border-radius: 5px;
+        resize: vertical;
+      }
+      
+      button {
+        background-color: #555;
+        color: #eee;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      
+      h2 {
+        margin-top: 20px;
+      }
+      
+  
+      
+  </style>
+  
+</head>
+<body>
+  <h1>RS Editor</h1>
+  <div class="control-panel">
+    Select Language:
+    &nbsp; &nbsp;
+    <select id="languages" class="languages" onchange="changeLanguage()">
+      <option value="python"> Python </option>
+      <option value="c"> C </option>
+      <option value="cpp"> C++ </option>
+      <option value="java"> Java </option>
+    </select>
+  </div>
+  <label for="code">Enter your code:</label><br>
+  <textarea id="code" rows="10" cols="50"></textarea><br>
+  
+  <button onclick="submitCode()">Submit</button><br>
+  
+  <h2>Output:</h2>
+  <pre id="output"></pre>
+  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    
+    function changeLanguage() {
+        const languageSelect = document.getElementById('languages');
+        const selectedLanguage = languageSelect.value;
+        let languageId;
+        
+        switch (selectedLanguage) {
+          case 'c':
+            languageId = 50; // Language ID for C
+            break;
+          case 'cpp':
+            languageId = 54; // Language ID for C++
+            break;
+          case 'java':
+            languageId = 62; // Language ID for Java
+            break;
+          case 'python':
+            languageId = 71; // Language ID for Python
+            break;
+          default:
+            languageId = 71; // Default to Python
+            break;
+        }
+        
+        const codeTextarea = document.getElementById('code');
+        codeTextarea.value = ''; // Clear the code textarea when changing language
+        codeTextarea.focus(); // Set focus back to the code textarea
+        codeTextarea.select(); // Select the code textarea content
+        
+        codeLanguageId = languageId;
+      }
+      
+      function submitCode() {
+        const code = document.getElementById('code').value;
+        const languageId = codeLanguageId; // Use the language ID based on the selected language
+        
+        const data = {
+          source_code: code,
+          language_id: languageId,
+          stdin: '', // Input for the program (optional)
+        };
+      axios.post('https://judge0-ce.p.rapidapi.com/submissions', data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com',
+          'X-RapidAPI-Key': 'cc657b13cemshb6e2b1187f58ca4p14e43fjsn63d50def32fe',
+        },
+      })
+      .then(response => {
+        const submissionId = response.data.token;
+        getSubmissionResult(submissionId);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    }
+    
+    function getSubmissionResult(submissionId) {
+      axios.get(`https://judge0-ce.p.rapidapi.com/submissions/${submissionId}`, {
+        headers: {
+          'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com',
+          'X-RapidAPI-Key': 'cc657b13cemshb6e2b1187f58ca4p14e43fjsn63d50def32fe',
+        },
+      })
+      .then(response => {
+        const status = response.data.status;
+        
+        if (status.id <= 2) {
+          // Still running or in the queue, so retry after 1 second
+          setTimeout(() => getSubmissionResult(submissionId), 1000);
+        } else {
+          // Process the final response
+          const output = response.data.stdout || response.data.compile_output || response.data.stderr || response.data.message;
+          document.getElementById('output').innerText = output;
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    }
+  </script>
+</body>
+</html>
