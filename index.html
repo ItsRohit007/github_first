@@ -1,0 +1,106 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=0.9">
+        <title></title>
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/index_stars.css">
+
+    </head>
+
+    <body>
+
+        <header class="header">
+            <h1 class="site-title">RS Editor</h1>
+            <nav class="navbar">
+                <a class="nav-items" href="./pages/rs2.html"><span class="nav-item-text">IDE</span></a>
+                <a class="nav-items" href="./pages/minimal_editor.html"><span class="nav-item-text">Minimal IDE</span></a>
+                <a class="nav-items" href="./pages/community_feed.html"><span class="nav-item-text">Community Feed
+                    </span></a>
+                <a class="nav-items" href="./pages/about_us.html"><span class="nav-item-text">About</span></a>
+                <a class="nav-items"
+                    href="mailto:contactsanskarcs@gmail.com?subject=subject&cc=contactsanskarcs@gmail.com"><span
+                        class="nav-item-text">Contact</span></a>
+                <!-- <a class="nav-items" href="/pages/"><span class="nav-item-text"></span></a> -->
+            </nav>
+
+
+
+            <?php if (isset($_SESSION["username"])) { ?>
+                <div class="profile-image-container">
+                    <a href="./pages/profile.html">
+                        <img class="profile-image" src="./assets/images/profile.png" alt="Profile Image">
+                    </a>
+                    <p class="user-info"><?php echo $_SESSION["username"]; ?></p>
+                    <!-- You can display additional user information here, such as email -->
+                    <!-- <p class="user-info"><?php echo $_SESSION["email"]; ?></p> -->
+                </div>
+            <?php } else { ?>
+                <button class="sign-up"><a href="./form/register.html">Sign Up</a></button>
+                <button class="log-in"><a href="./form/login.html">Log In</a></button>
+            <?php } ?>
+
+
+
+            <!-- <button class="sign-up"><a href="./form/register.html">Sign Up</a></button>
+            <button class="log-in"><a href="./form/login.html">Log In</a></button>
+            <div class="profile-image-container"><a href="./pages/profile.html"><img class="profile-image"
+                        src="./assets/images/sanskar.png"></a></div> -->
+        </header>
+
+        <div class="main">
+            <div class="greeting">
+                <div id="stars"></div>
+                <div id="stars2"></div>
+                <div id="stars3"></div>
+                <div id="title">
+                    <span> Welcome </span> <br>
+                    <span> Let's Start Coding! </span>
+                    <br><button id="login-btn" class="btn-style"><a href="./form/login.html">Let's
+                            Go</button></a><br>
+                </div>
+            </div>
+            <div class="feature-container">
+                <div class="feature"><img src="./assets/images/features/f1.jpg">
+                    <p class="feature-info">Integrated Development Environments (IDEs) offer powerful coding tools and features to enhance developer productivity. They provide a complete software development environment with features like code editing, debugging, and project management.</p>
+                </div>
+                <div class="feature">
+                    <p class="feature-info">Real-time code analysis helps developers identify potential errors and code issues as they write code. IDEs analyze the code syntax, provide warnings, and suggest improvements, enabling developers to write cleaner and more reliable code.</p><img
+                        src="./assets/images/features/f1.jpg">
+                </div>
+                <div class="feature"><img src="./assets/images/features/f1.jpg">
+                    <p class="feature-info">IDEs provide advanced debugging capabilities to identify and fix software issues. They offer features like breakpoints, stepping through code, variable inspection, and error tracking, enabling developers to find and resolve bugs quickly.</p>
+ 
+                </div>
+                <div class="feature">
+                    <p class="feature-info">Version control integration allows developers to manage their codebase effectively and collaborate with others. IDEs seamlessly integrate with popular version control systems, such as Git, enabling tasks like code versioning, branching, merging, and conflict resolution.</p>
+                    <img
+                        src="./assets/images/features/f1.jpg">
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="container">
+
+                <div class="column">
+                    <h4> My Links </h4>
+                    <p>
+                        <a href="https://twitter.com/SanskarSanskar">Twitter</a> <br>
+                        <a href="https://www.instagram.com/sanskar_suryawanshii/">Instagram</a>
+                    </p>
+                </div>
+                <div class="column">
+                    <h4> Our Story </h4>
+                    <p> Hi there! We are aspiring web developers. </p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    </html>
